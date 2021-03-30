@@ -5,13 +5,15 @@
 
 {% for finch in finches %}
   <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ finch.name }}</span>
-      <p>Common Name: {{ finch.common_name }}</p>
-      <p>Description: {{ finch.description }}</p>
-      <p>Weight: {{ finch.weight }}g</p>
-    </div>
-  </div>
+    <a href="{% url 'detail' finch.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ finch.name }}</span>
+        <p>Common Name: {{ finch.common_name }}</p>
+				<p>Description: {{ finch.description }}</p>
+				<p>Weight: {{ finch.weight }}g</p>
+			</div>
+		</a>
+	</div>
 {% endfor %}
 
 {% endblock %}
